@@ -1,0 +1,971 @@
+{
+	"info": {
+		"_postman_id": "558bc6d8-f414-4fb7-b96c-567030a0bc07",
+		"name": "cuidalacasa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7032391"
+	},
+	"item": [
+		{
+			"name": "db",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "get last UserId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/user/1",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validate user email",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/user/test@test.com/validation/123",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"user",
+										"test@test.com",
+										"validation",
+										"123"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user for email",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/user/Camilo@gmail.com",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"user",
+										"Camilo@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"esasdf\",\n    \"email\": \"Ddd32@gmail.com\",\n    \"password\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/user",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/users",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "postulation",
+					"item": [
+						{
+							"name": "add postulation",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"title\": \"By the sea and close to the village and the city. Dalkey, Ireland\",\n        \"place\": \"Dalkey, Ireland\",\n        \"user_id\": 5,\n        \"state\": \"Pending\",\n        \"comment\": \"Me quiero postular\",\n        \"user_house_id\": \"Pedro\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/postulation",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"postulation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get postulation for hashId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/postulation/646d8160ac3c99288bcaefe7",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"postulation",
+										"646d8160ac3c99288bcaefe7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get postulation for hashId Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"state\":\"Approved\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/postulation/646d74f253006f447e0546af",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"postulation",
+										"646d74f253006f447e0546af"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete postulation per hashId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/postulation/64862e76d79c6c59f53dd04a",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"postulation",
+										"64862e76d79c6c59f53dd04a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all postulations",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/postulations",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"postulations"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "publication",
+					"item": [
+						{
+							"name": "Add publication",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"postulationIds\": [],\n        \"imgs\": [],\n        \"title\": \"West Hollywood Cats Need a Babysitter and a Friend.\",\n        \"dateFrom\": \"2023-06-01T00:00:00.000Z\",\n        \"dateTo\": \"2023-06-30T00:00:00.000Z\",\n        \"place\": \"West Hollywood, CA, US\",\n        \"type\": \"🏠 House\",\n        \"pets\": [\"🐕 Dog\"],\n        \"userId\": \"2\",\n        \"description\": \"Hello! We are a family of three (plus Luke and Leia), working as independent filmmakers and living in a little two-bedroom bungalow. We're off to Europe and the kitties need a companion.\",\n        \"open\": true,\n        \"role\": \"owner\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/publication",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"publication"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get publication",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let res = JSON.parse(responseBody);",
+											"pm.environment.set('publicationId', res._id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/publication/6483ef30fb44fffafa6eaaad",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"publication",
+										"6483ef30fb44fffafa6eaaad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all publications",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/publications",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"publications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit publication",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/publication/646fc18d6ca8f155b3e300d6",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"publication",
+										"646fc18d6ca8f155b3e300d6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete publication per hash",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/publication/646fcb7e815f1b36789542ef",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"publication",
+										"646fcb7e815f1b36789542ef"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete postulation for specific publication per hashes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/publication/646fc18d6ca8f155b3e300d6/postulation/2",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"publication",
+										"646fc18d6ca8f155b3e300d6",
+										"postulation",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "Add profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"userId\": \"4\",\n        \"name\": \"Ddd\",\n        \"lastName\": \"Ddd Ddd\",\n        \"email\":\"Ddd@gmail.com\",\n        \"age\": 35,\n        \"country\": \"Argentina\",\n        \"sitterDescription\": \"lorem ipsum dolor\",\n        \"ownerDescription\": \"lorem ipsum dolor\",\n        \"picture\": null,\n        \"pets\": [\"🐕 Dog\",\"🐈 Cat\"],\n        \"amount\": 1,\n        \"sitterRating\": 0,\n        \"ownerRating\": 5\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/profile",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get profile per user id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/profile/1",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"profile",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all profiles for filter and sort",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/profiles",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"profiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit profile per user Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Camilooo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/profile/1",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"profile",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete  profile per user Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/profile/1",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"profile",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rating",
+					"item": [
+						{
+							"name": "Add rating",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let res = JSON.parse(responseBody);",
+											"pm.environment.set('hashId', res.insertedId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"publicationId\": \"{{publicationId}}\",\n    \"rater\": \"1\",\n    \"ratee\": \"1\",\n    \"role\": \"owner\",\n    \"comment\": \"Esto es un comenatario2\",\n    \"rating\": 3,\n    \"public\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/rating",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"rating"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get rating per hashId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/rating/{{hashId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"rating",
+										"{{hashId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all ratings",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/ratings",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"ratings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get rating per publication ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/rating/publication/123",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"rating",
+										"publication",
+										"123"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit rating per hashId",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rater\": \"1\",\n    \"ratee\": \"1\",\n    \"role\": \"owner\",\n    \"comment\": \"Esto es un comenatario modificado\",\n    \"rating\": 3,\n    \"public\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/rating/{{hashId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"rating",
+										"{{hashId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete rating per hashId",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{hostname}}/.netlify/functions/api/rating/{{hashId}}",
+									"host": [
+										"{{hostname}}"
+									],
+									"path": [
+										".netlify",
+										"functions",
+										"api",
+										"rating",
+										"{{hashId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

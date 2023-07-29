@@ -1,0 +1,4 @@
+/api/*  http://localhost:3000/:splat  200
+/api/*  https://velvety-lolly-696161.netlify.app/:splat  200
+http://localhost:3000/*  https://velvety-lolly-696161.netlify.app/:splat  200
+http://localhost:3000/*  http://localhost:8888/:splat  200
